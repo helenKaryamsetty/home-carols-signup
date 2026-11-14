@@ -14,17 +14,17 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Cloudflare Pages deployment
+## Cloudflare Workers deployment
 
-This app is a static Angular build and is ready for Cloudflare Pages.
+This app is deployed as a Cloudflare Worker serving Angular static assets.
 
-- Minimum Wrangler version: `4.1`
+- Wrangler configuration: `wrangler.jsonc`
 - Build command: `npm run build`
-- Output directory: `dist/carol-house-visit/browser`
-- SPA fallback: included in `public/_redirects` so deep links load correctly
+- Deploy command: `npx wrangler deploy`
+- SPA fallback: configured with `not_found_handling: "single-page-application"`
 - Security headers: included in `public/_headers`
 
-Connect this repo as a **Cloudflare Pages** project, set the build command to `npm run build` and the output directory to `dist/carol-house-visit/browser`. If deploying from the CLI, use `npx wrangler pages deploy dist/carol-house-visit/browser` with Wrangler `v4.1+`; `wrangler deploy` is for Workers and does not deploy this Pages app.
+In Cloudflare Workers Builds, use root directory `/`, build command `npm run build`, and deploy command `npx wrangler deploy`.
 
 ## Running unit tests
 
