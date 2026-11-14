@@ -20,11 +20,11 @@ This app is a static Angular build and is ready for Cloudflare Pages.
 
 - Minimum Wrangler version: `4.1`
 - Build command: `npm run build`
-- Output directory: `dist/carol-house-visit`
+- Output directory: `dist/carol-house-visit/browser`
 - SPA fallback: included in `public/_redirects` so deep links load correctly
 - Security headers: included in `public/_headers`
 
-If you are connecting this repo to Cloudflare Pages, set the project to use the above build command and output directory, and use Wrangler `v4.1+`.
+Connect this repo as a **Cloudflare Pages** project, set the build command to `npm run build` and the output directory to `dist/carol-house-visit/browser`. If deploying from the CLI, use `npx wrangler pages deploy dist/carol-house-visit/browser` with Wrangler `v4.1+`; `wrangler deploy` is for Workers and does not deploy this Pages app.
 
 ## Running unit tests
 

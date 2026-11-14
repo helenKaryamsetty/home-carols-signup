@@ -2,6 +2,6 @@
   "$schema": "https://raw.githubusercontent.com/cloudflare/workers-sdk/main/packages/wrangler/config-schema.json",
   "name": "carol-house-visit",
   "compatibility_date": "2026-11-15",
-  "pages_build_output_dir": "./dist/carol-house-visit",
+  "pages_build_output_dir": "./dist/carol-house-visit/browser",
   "compatibility_flags": []
 }
