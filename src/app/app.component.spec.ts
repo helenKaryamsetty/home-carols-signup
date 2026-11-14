@@ -20,10 +20,26 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('carol-house-visit');
   });
 
-  it('should render title', () => {
+  it('should render the Home Carols signup form', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, carol-house-visit');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Home');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Carols');
+    expect(compiled.querySelector('h1 em')?.textContent).toBe('Home Carols');
+    expect(compiled.querySelector('.eyebrow')).toBeNull();
+    expect(compiled.querySelector('.welcome-cta')).toBeNull();
+    expect(compiled.querySelector('form')).toBeTruthy();
+    expect(compiled.querySelector('[name="preferredVisitTime"]')?.getAttribute('type')).toBe('datetime-local');
+    expect(compiled.querySelector('[name="locationMap"]')).toBeTruthy();
+  });
+
+  it('should show a thank-you page after signup', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.componentInstance.status = 'success';
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('#thank-you-title')?.textContent).toContain('Thank you for signing up');
+    expect(compiled.querySelector('form')).toBeNull();
   });
 });

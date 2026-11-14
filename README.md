@@ -14,6 +14,18 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
+## Cloudflare Pages deployment
+
+This app is a static Angular build and is ready for Cloudflare Pages.
+
+- Minimum Wrangler version: `4.1`
+- Build command: `npm run build`
+- Output directory: `dist/carol-house-visit`
+- SPA fallback: included in `public/_redirects` so deep links load correctly
+- Security headers: included in `public/_headers`
+
+If you are connecting this repo to Cloudflare Pages, set the project to use the above build command and output directory, and use Wrangler `v4.1+`.
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
