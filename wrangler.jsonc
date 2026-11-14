@@ -1,7 +1,10 @@
 {
   "$schema": "https://raw.githubusercontent.com/cloudflare/workers-sdk/main/packages/wrangler/config-schema.json",
-  "name": "carol-house-visit",
+  "name": "home-carols-signup",
   "compatibility_date": "2026-11-15",
-  "pages_build_output_dir": "./dist/carol-house-visit/browser",
+  "assets": {
+    "directory": "./dist/carol-house-visit/browser",
+    "not_found_handling": "single-page-application"
+  },
   "compatibility_flags": []
 }
